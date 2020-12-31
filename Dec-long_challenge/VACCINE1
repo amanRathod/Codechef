@@ -1,1 +1,46 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+const int MAX_VERTEX = 101;
+int x; 
+
+int main() {
+
+        int d1, v1, d2, v2, p, count = 0;
+        cin >> d1 >> v1 >> d2 >> v2 >> p;
+        int i;
+        bool flag=false;
+    
+           if(d2 > d1 ){
+              int D = d1-1;
+              while(p> count){
+                    count+=v1;
+                    if(d1==d2 || flag == true){
+                    count+= v2;
+                    flag =true;
+                    }
+                    d1++;
+                    D++;
+              }
+              cout << D << endl;
+        }
+        else{
+              int D= d2-1;
+              while(p> count){
+                    count+= v2;
+                    if(d1 == d2 || flag == true){
+                          count+= v1;
+                          flag=true;
+        }
+        d2++;
+        D++;
+              }
+              cout<< D << endl;
+        }
+                return 0;
+}
+
+
 
